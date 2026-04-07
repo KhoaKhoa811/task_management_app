@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
 
 :root {
-  --primary-font: 'Inter', sans-serif;
+  --primary-font: 'Inter', system-ui, -apple-system, sans-serif;
   --bg-color: #f8f9fa;
   --text-main: #212529;
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -15,9 +15,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  height: 100vh;
 }
 
 h1, h2, h3 {
@@ -27,4 +25,11 @@ h1, h2, h3 {
 
 * {
   box-sizing: border-box;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  width: 100%;
 }
