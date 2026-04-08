@@ -1,0 +1,68 @@
+.kanban-board-container {
+  padding: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.board {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.column-container {
+  min-width: 300px;
+  background-color: #eeeeee;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.todo-container {
+  min-width: 300px;
+  background-color: #cfe2f3;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.in-progress-container {
+  min-width: 300px;
+  background-color: #fff2cc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.done-container {
+  min-width: 300px;
+  background-color: #d9ead3;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cancelled-container {
+  min-width: 300px;
+  background-color: #f4cccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.task-list {
+  min-height: 100px;
+  display: block;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.task-list.cdk-drop-list-dragging .task-item:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.placeholder {
+  background: rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+  margin-bottom: 8px;
+}

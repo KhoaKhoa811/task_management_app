@@ -1,0 +1,32 @@
+<div class="kanban-board-container">
+  <h2 class="title">Ship Board - Tasks to Done</h2>
+
+  <div class="board" cdkDropListGroup>
+    
+    <div *ngFor="let column of boardColumns"
+    [ngClass]="{
+      'column-container': column.name === 'BACKLOG',
+      'todo-container': column.name === 'TO DO',
+      'done-container': column.name === 'DONE',
+      'in-progress-container': column.name === 'IN PROGRESS',
+      'cancelled-container': column.name === 'CANCELLED'
+    }">
+      <h3>{{ column.name }}</h3>
+      <div
+        cdkDropList
+        [cdkDropListData]="column.tasks"
+        (cdkDropListDropped)="onDrop($event)"
+        class="task-list">
+        
+        <app-kanban-item 
+          class="task-item" cdkDrag
+          *ngFor="let item of column.tasks"
+          [task]="item"
+          [color]="column.color">
+          <div class="placeholder" *cdkDragPlaceholder></div>
+        </app-kanban-item>
+        
+      </div>
+    </div>
+
+</div>
