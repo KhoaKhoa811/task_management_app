@@ -1,5 +1,7 @@
-<div class="kanban-item-container" [style.background-color]="color">
-  <p item-content>{{ task.title }}</p>
-  <p item-content>{{ task.description }}</p>
+<div class="kanban-item-container">
+  <p class="item-title">{{ task.title }}</p>
+  <div class="item-severity" [attr.severity]="task.severity">{{ task.severity }}</div>
+  <div class="item-type" [attr.type]="task.type">{{ task.type }}</div>
+  <div class="item-created-date">{{ task.createdDate }}</div>
   <ng-content></ng-content>
 </div>

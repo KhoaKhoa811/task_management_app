@@ -21,8 +21,7 @@
         <app-kanban-item 
           class="task-item" cdkDrag
           *ngFor="let item of column.tasks"
-          [task]="item"
-          [color]="column.color">
+          [task]="item">
           <div class="placeholder" *cdkDragPlaceholder></div>
         </app-kanban-item>
         

@@ -9,5 +9,4 @@ import { Component, Input } from '@angular/core';
 })
 export class KanbanItem {
   @Input() task: any;
-  @Input() color: string = '#ccc';
 }

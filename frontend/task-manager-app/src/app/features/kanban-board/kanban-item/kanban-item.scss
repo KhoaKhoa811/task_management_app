@@ -1,10 +1,64 @@
-:host { display: block; } /* Rất quan trọng để cdkDrag hoạt động chuẩn */
+:host { display: block; }
 
 .kanban-item-container {
   background: white;
   margin-bottom: 8px;
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12);
   cursor: grab;
+}
+
+.item-title {
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.item-severity {
+  display: block;
+  width: fit-content;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.item-type {
+  display: block;
+  width: fit-content;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.item-type[type="Personal"] {
+  background-color: #e5ccff;
+}
+
+.item-type[type="Work"] {
+  background-color: #cce5ff;
+}
+
+.item-type[type="Learning"] {
+  background-color: #ffccff;
+}
+
+.item-type[type="Other"] {
+  background-color: #ccffe5;
+}
+
+.item-severity[severity="High"] {
+  background-color: #ffcccc;
+}
+
+.item-severity[severity="High"] {
+  background-color: #ffcccc;
+}
+
+.item-severity[severity="Medium"] {
+  background-color: #fff0b3;
+}
+
+.item-severity[severity="Low"] {
+  background-color: #ccffcc;
 }
