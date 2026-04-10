@@ -1,7 +1,9 @@
+import { SidePanel } from './../../core/services/side-panel';
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { KanbanItem } from './kanban-item/kanban-item';
+import { TaskForm } from '../tasks/task-form/task-form';
 
 @Component({
   selector: 'app-kanban-board',
@@ -10,6 +12,8 @@ import { KanbanItem } from './kanban-item/kanban-item';
   styleUrl: './kanban-board.scss',
 })
 export class KanbanBoard {
+  constructor(private sidePanel: SidePanel) {}
+
   todo: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
     { id: '1', title: 'Thiết kế Database', severity: 'High', type: 'Personal', createdDate: '2023-01-01' },
     { id: '2', title: 'Học Angular Standalone', severity: 'Medium', type:'Work', createdDate: '2023-01-02' }
@@ -55,5 +59,9 @@ export class KanbanBoard {
         event.currentIndex
       );
     }
+  }
+
+  onTaskClick(task: any) {
+    this.sidePanel.open(TaskForm, { task });
   }
 }

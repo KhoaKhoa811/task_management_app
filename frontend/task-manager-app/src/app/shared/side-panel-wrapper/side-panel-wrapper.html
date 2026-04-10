@@ -1,0 +1,10 @@
+<div class="side-panel-container">
+  <div class="side-panel-header">
+    <button (click)="close()">×</button>
+  </div>
+
+  <div class="side-panel-body">
+    <ng-container *ngComponentOutlet="data.component"></ng-container>
+  </div>
+
+</div>
