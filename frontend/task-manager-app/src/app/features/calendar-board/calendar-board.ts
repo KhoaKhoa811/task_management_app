@@ -1,8 +1,10 @@
+import { SidePanel } from './../../core/services/side-panel';
 import { CommonModule } from '@angular/common';
 import { Component, afterNextRender } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { TaskForm } from '../tasks/task-form/task-form';
 
 @Component({
   selector: 'app-calendar-board',
@@ -11,6 +13,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
   styleUrl: './calendar-board.scss',
 })
 export class CalendarBoard {
+
+  constructor(private sidePanel: SidePanel) {}
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -30,6 +34,7 @@ export class CalendarBoard {
       meridiem: true,
       hour12: true   
     },
+    eventClick: this.handleEventClick.bind(this),
     
     events: [
       { title: 'Fix Bug CSS fsdfdsfgdzghdghdfhdhdg', start: '2026-04-09T09:00:00', className: 'event-severity-hot' },
@@ -37,4 +42,8 @@ export class CalendarBoard {
       { title: 'Học Angular', start: '2026-04-12T19:00:00', className: 'event-severity-low' }
     ]
   };
+
+  handleEventClick(arg: any) {
+    this.sidePanel.open(TaskForm, { event: arg.event });
+  }
 }
