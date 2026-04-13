@@ -4,4 +4,63 @@
     .task-title {
         font-size: 2.2rem;
     }
+
+    .title-input {
+        width: 100%;
+        border: none;             
+        outline: none;            
+        background: transparent; 
+        color: #000;           
+        font-size: 2rem;         
+        font-weight: 700;
+        padding: 10px 0;
+        
+        &::placeholder {
+            color: #000; 
+        }
+
+        &:focus {
+            background: transparent; 
+        }
+    }
+
+    .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(2, 20px);
+        gap: 4px;
+        margin-bottom: 16px; 
+
+
+        .prop-label {
+            color: #606060;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .prop-value {
+            font-size: 14px;
+            color: #000;
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+
+    .divider {
+        height: 1px;
+        background-color: #606060;
+        margin: 20px 0;
+    }
+
+    .content-editor {
+        margin-top: 20px;
+        outline: none;
+        line-height: 1.6;
+        &:empty:before {
+            content: attr(data-placeholder);
+            color: #000;
+        }
+    }
 }

@@ -1,5 +1,29 @@
 <div class="task-form-container">
-    <h1 class="task-title">{{ task.title }}</h1>
+    <header class="task-form-header">
+        <input 
+        type="text" 
+        [(ngModel)]="pageTitle" 
+        class="title-input" 
+        placeholder="{{ task.title }}">
+    </header>
+    
+    <section class="properties-grid">
+        <span class="prop-label"><i class="icon-status"></i> Status</span>
+        <span class="prop-label"><i class="icon-category"></i> Priority </span>
+        <span class="prop-label"><i class="icon-category"></i> Category</span>
+        <span class="prop-label"><i class="icon-date"></i> Due Date</span>
+
+        <span class="prop-value status-badge">To-Do</span>
+        <span class="prop-value">High</span>
+        <span class="prop-value">Personal</span>
+        <span class="prop-value">2024-07-01</span>
+    </section>
+
+    <hr class="divider">
+
+    <div class="content-editor" contenteditable="true" data-placeholder="Enter task details here...">
+    </div>
+    
 </div>
 
 
