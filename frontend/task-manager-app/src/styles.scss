@@ -75,6 +75,11 @@ app-root {
   width: 100%;
 }
 
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit; 
+}
+
 
 .custom-slide-panel {
   
