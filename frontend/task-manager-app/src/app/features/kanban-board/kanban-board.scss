@@ -1,3 +1,5 @@
+@import '../../shared/theme/_theme.scss';
+
 .kanban-board-container {
   padding: 40px;
 }
@@ -18,34 +20,11 @@
   background-color: #eeeeee;
   border-radius: 8px;
   padding: 10px;
-}
-
-.todo-container {
-  min-width: 300px;
-  background-color: #cfe2f3;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.in-progress-container {
-  min-width: 300px;
-  background-color: #fff2cc;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.done-container {
-  min-width: 300px;
-  background-color: #d9ead3;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.cancelled-container {
-  min-width: 300px;
-  background-color: #f4cccc;
-  border-radius: 8px;
-  padding: 10px;
+  &[status="backlog"] {@include apply-task-color("backlog"); }
+  &[status="todo"] {@include apply-task-color("todo"); }
+  &[status="in-progress"] {@include apply-task-color("in-progress"); }
+  &[status="done"] {@include apply-task-color("done"); }
+  &[status="cancelled"] {@include apply-task-color("cancelled"); }
 }
 
 .task-list {

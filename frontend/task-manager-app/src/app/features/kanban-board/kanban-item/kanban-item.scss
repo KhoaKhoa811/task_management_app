@@ -1,3 +1,5 @@
+@import '../../../shared/theme/_theme.scss';
+
 :host { display: block; }
 
 .kanban-item-container {
@@ -31,34 +33,13 @@
   margin-bottom: 12px;
 }
 
-.item-type[type="Personal"] {
-  background-color: #e5ccff;
+.item-severity {
+  &[severity="High"]   { @include apply-task-color("High"); }
+  &[severity="Medium"] { @include apply-task-color("Medium"); }
+  &[severity="Low"]    { @include apply-task-color("Low"); }
 }
 
-.item-type[type="Work"] {
-  background-color: #cce5ff;
-}
-
-.item-type[type="Learning"] {
-  background-color: #ffccff;
-}
-
-.item-type[type="Other"] {
-  background-color: #ccffe5;
-}
-
-.item-severity[severity="High"] {
-  background-color: #ffcccc;
-}
-
-.item-severity[severity="High"] {
-  background-color: #ffcccc;
-}
-
-.item-severity[severity="Medium"] {
-  background-color: #fff0b3;
-}
-
-.item-severity[severity="Low"] {
-  background-color: #ccffcc;
+.item-type {
+  &[type="Personal"] { @include apply-task-color("Personal"); }
+  &[type="Work"]     { @include apply-task-color("Work"); }
 }

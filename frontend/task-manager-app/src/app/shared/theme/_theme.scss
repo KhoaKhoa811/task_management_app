@@ -1,0 +1,20 @@
+@use 'sass:map';
+
+$task-colors: (
+  "backlog":  #eeeeee,
+  "todo":     #cfe2f3,
+  "in-progress": #fff2cc,
+  "done":     #d9ead3,
+  "cancelled": #f4cccc,
+  "Personal": #e5ccff,
+  "Work":     #cce5ff,
+  "Learning": #ffccff,
+  "Other":    #ccffe5,
+  "High":     #ffcccc,
+  "Medium":   #fff0b3,
+  "Low":      #ccffcc,
+);
+
+@mixin apply-task-color($type) {
+  background-color: map.get($task-colors, $type);
+}

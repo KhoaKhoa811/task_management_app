@@ -37,11 +37,11 @@ export class KanbanBoard {
   ];
 
   boardColumns = [
-    { name: 'BACKLOG', tasks: this.backlog },
-    { name: 'TO DO', tasks: this.todo },
-    { name: 'IN PROGRESS', tasks: this.inProgress },
-    { name: 'DONE', tasks: this.done },
-    { name: 'CANCELLED', tasks: this.cancelled }
+    { name: 'BACKLOG', tasks: this.backlog, status: 'backlog' },
+    { name: 'TO DO', tasks: this.todo, status: 'todo' },
+    { name: 'IN PROGRESS', tasks: this.inProgress, status: 'in-progress' },
+    { name: 'DONE', tasks: this.done, status: 'done' },
+    { name: 'CANCELLED', tasks: this.cancelled, status: 'cancelled' }
   ];
 
   onDrop(event: CdkDragDrop<{ id: string; title: string; severity: string; type: string; createdDate: string }[]>) {
