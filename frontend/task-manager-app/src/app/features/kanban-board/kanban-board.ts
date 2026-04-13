@@ -14,26 +14,26 @@ import { TaskForm } from '../tasks/task-form/task-form';
 export class KanbanBoard {
   constructor(private sidePanel: SidePanel) {}
 
-  todo: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
-    { id: '1', title: 'Thiết kế Database', severity: 'High', type: 'Personal', createdDate: '2023-01-01' },
-    { id: '2', title: 'Học Angular Standalone', severity: 'Medium', type:'Work', createdDate: '2023-01-02' }
+  todo: { id: string; title: string; status: string; severity: string; type: string; dueDate: string }[] = [
+    { id: '1', title: 'Thiết kế Database', status: 'todo', severity: 'High', type: 'Personal', dueDate: '2023-01-01' },
+    { id: '2', title: 'Học Angular Standalone', status: 'todo', severity: 'Medium', type:'Work', dueDate: '2023-01-02' }
   ];
 
-  backlog: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
-    { id: '1', title: 'Thiết kế Database', severity: 'High', type: 'Personal', createdDate: '2023-01-01' },
-    { id: '2', title: 'Học Angular Standalone', severity: 'Medium', type: 'Personal', createdDate: '2023-01-02' }
+  backlog: { id: string; title: string; status: string; severity: string; type: string; dueDate: string }[] = [
+    { id: '1', title: 'Thiết kế Database', status: 'backlog', severity: 'High', type: 'Personal', dueDate: '2023-01-01' },
+    { id: '2', title: 'Học Angular Standalone', status: 'backlog', severity: 'Medium', type: 'Personal', dueDate: '2023-01-02' }
   ];
 
-  inProgress: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
-    { id: '3', title: 'Làm chức năng Drag & Drop', severity: 'Medium', type: 'Work', createdDate: '2023-01-03' }
+  inProgress: { id: string; title: string; status: string; severity: string; type: string; dueDate: string }[] = [
+    { id: '3', title: 'Làm chức năng Drag & Drop', status: 'in-progress', severity: 'Medium', type: 'Work', dueDate: '2023-01-03' }
   ];
 
-  done: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
-    { id: '4', title: 'Cài đặt project', severity: 'Low', type: 'Work', createdDate: '2023-01-04' }
+  done: { id: string; title: string; status: string; severity: string; type: string; dueDate: string }[] = [
+    { id: '4', title: 'Cài đặt project', status: 'done', severity: 'Low', type: 'Work', dueDate: '2023-01-04' }
   ];
 
-  cancelled: { id: string; title: string; severity: string; type: string; createdDate: string }[] = [
-    { id: '5', title: 'Hủy bỏ chức năng', severity: 'Low', type: 'Personal', createdDate: '2023-01-05' }
+  cancelled: { id: string; title: string; status: string; severity: string; type: string; dueDate: string }[] = [
+    { id: '5', title: 'Hủy bỏ chức năng', status: 'cancelled', severity: 'Low', type: 'Personal', dueDate: '2023-01-05' }
   ];
 
   boardColumns = [
@@ -44,7 +44,7 @@ export class KanbanBoard {
     { name: 'CANCELLED', tasks: this.cancelled, status: 'cancelled' }
   ];
 
-  onDrop(event: CdkDragDrop<{ id: string; title: string; severity: string; type: string; createdDate: string }[]>) {
+  onDrop(event: CdkDragDrop<{ id: string; title: string; status: string; severity: string; type: string; dueDate: string }[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data, 

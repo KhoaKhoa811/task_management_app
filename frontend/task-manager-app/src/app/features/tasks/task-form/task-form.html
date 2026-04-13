@@ -9,14 +9,14 @@
     
     <section class="properties-grid">
         <span class="prop-label"><i class="icon-status"></i> Status</span>
-        <span class="prop-label"><i class="icon-category"></i> Priority </span>
+        <span class="prop-label"><i class="icon-priority"></i> Priority </span>
         <span class="prop-label"><i class="icon-category"></i> Category</span>
         <span class="prop-label"><i class="icon-date"></i> Due Date</span>
 
-        <span class="prop-value status-badge">To-Do</span>
-        <span class="prop-value">High</span>
-        <span class="prop-value">Personal</span>
-        <span class="prop-value">2024-07-01</span>
+        <span class="prop-value status-badge" [attr.status]="task.status">{{ task.status }}</span>
+        <span class="prop-value" [attr.severity]="task.severity">{{ task.severity }}</span>
+        <span class="prop-value" [attr.type]="task.type">{{ task.type }}</span>
+        <span class="prop-value">{{ task.dueDate }}</span>
     </section>
 
     <hr class="divider">
