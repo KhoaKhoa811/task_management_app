@@ -68,7 +68,7 @@ export class ChartBoard {
   };
 
   public lineChartData: ChartData<'line'> = {
-    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     datasets: [
       {
         data: [2, 4, 3, 5, 7, 3],
