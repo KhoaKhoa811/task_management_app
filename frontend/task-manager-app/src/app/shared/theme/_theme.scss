@@ -18,3 +18,18 @@ $task-colors: (
 @mixin apply-task-color($type) {
   background-color: map.get($task-colors, $type);
 }
+
+:export {
+  backlog: map.get($task-colors, "backlog");
+  todo: map.get($task-colors, "todo");
+  inProgress: map.get($task-colors, "in-progress");
+  done: map.get($task-colors, "done");
+  cancelled: map.get($task-colors, "cancelled");
+  personal: map.get($task-colors, "Personal");
+  work: map.get($task-colors, "Work");
+  learning: map.get($task-colors, "Learning");
+  other: map.get($task-colors, "Other");
+  high: map.get($task-colors, "High");
+  medium: map.get($task-colors, "Medium");
+  low: map.get($task-colors, "Low");
+}
