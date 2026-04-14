@@ -68,10 +68,10 @@ export class ChartBoard {
   };
 
   public lineChartData: ChartData<'line'> = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        data: [2, 4, 3, 5, 7, 3],
+        data: [2, 4, 3, 5, 7, 3, 6, 4, 5, 8, 6, 7],
         label: 'Overdue Tasks',
         borderColor: '#3b82f6',
         backgroundColor: 'rgba(59, 130, 246, 0.1)', 
